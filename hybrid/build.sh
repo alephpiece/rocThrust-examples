@@ -6,8 +6,7 @@ set -e
 
 cmake -S . -B build \
     -DCMAKE_BUILD_TYPE=Release \
-    -DCMAKE_C_COMPILER=mpicc \
-    -DCMAKE_CXX_COMPILER=mpicxx
+    -DFLOAT=float
 
 cmake --build build -j8
 

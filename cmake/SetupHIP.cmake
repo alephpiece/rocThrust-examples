@@ -13,9 +13,6 @@
 #       rocthrust
 #   CMake module path:  (in case the environment variables are missing)
 #       ${HIP_PATH}/cmake
-#   CMake prefix path:  (in case the environment variables are missing)
-#       ${ROCM_PATH}/lib/cmake
-#       ${HIP_PATH}/lib/cmake
 #
 # ==============================================================================
 macro(setup_hip)

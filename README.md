@@ -1,17 +1,23 @@
-# Examples for rocThrust
-
 This repository contains examples taken from [Nvidia Thrust Guide](https://docs.nvidia.com/cuda/thrust/).
 
+Examples:
 
-## Requirements
-
-- ROCm with HIPCC, HCC, and rocThrust
-- MPI
-- fmt
-- google benchmark
+- Basic rocThrust APIs
+- Hybrid MPI/HIP with robust coloring
+- Hybrid MPI/HIP/std::thread with host/device overlapping
 
 
-## Source tree
+# Requirements
+
+- C++17 supported
+- ROCm with HIPCC, HCC, and rocThrust >= 3.0
+- CMake >= 3.15
+- MPI >= 3.0
+- fmt >= 6.2.1
+- google benchmark >= 1.5.2
+
+
+# Source tree
 
 
 ```
@@ -29,13 +35,13 @@ This repository contains examples taken from [Nvidia Thrust Guide](https://docs.
 |   |-- sort
 |   |-- sum
 |   `-- utils
-`-- hybrid_mpi_hip          # examples for hybrid MPI/HIP programming
+`-- hybrid                  # examples for hybrid programming
     |-- CMakeLists.txt
     |-- build.sh            # build all cases
     |-- run.sh              # run some example
-    |-- rank_color
-    |-- saxpy
-    |-- sum
-    `-- utils
+    |-- rank_color          # show GPU assigned to each rank
+    |-- saxpy               # hybrid MPI/HIP/std::thread, host/device overlapping
+    |-- sum                 # MPI_Reduce + thrust::reduce
+    `-- utils               # utilities for MPI, HIP, logging, and timing
 ```
 

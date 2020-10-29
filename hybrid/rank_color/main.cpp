@@ -1,6 +1,5 @@
-#include <fmt/core.h>           /* print */
-
 #include "utils/gpu_utils.h"    /* namespace gpuutils */
+#include "utils/log_utils.h"    /* namespace logutils */
 #include "utils/mpi_utils.h"    /* namespace mpiutils */
 
 
@@ -13,12 +12,12 @@ int main() {
     int n_gpus = gpuutils::getNumGPUs();
 
     // Split the communicator to determine node-local ranks
-    int gpu_id = mpiutils::getMyGPU(n_gpus);
+    int gpu_id = gpuutils::getMyGPU();
 
     // Get my rank
     int rank = mpiutils::getCommRank();
 
-    fmt::print("Rank {} is assigned GPU {}, total is {}.\n", rank, gpu_id, n_gpus);
+    logutils::print("Assigned GPU {}, there are {} in total\n", gpu_id, n_gpus);
 
     // Finalize MPI
     mpiutils::finalize();

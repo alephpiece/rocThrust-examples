@@ -10,7 +10,7 @@ Examples:
 # Requirements
 
 - C++17 supported
-- ROCm with HIPCC, HCC, and rocThrust >= 3.0
+- ROCm with HIPCC, HCC, and rocThrust < 3.5
 - CMake >= 3.15
 - MPI >= 3.0
 - fmt >= 6.2.1
